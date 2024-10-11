@@ -67,7 +67,7 @@ public class MonitoringController {
     @GetMapping("/findByDate")
     public List<MonitoringDataDTO> getMonitoringData() throws ParseException {
         // 获取三周前的日期
-        LocalDate threeWeeksAgo = LocalDate.now().minusDays(35);
+        LocalDate threeWeeksAgo = LocalDate.now().minusDays(45);
         Date startDate = Date.from(threeWeeksAgo.atStartOfDay(ZoneId.systemDefault()).toInstant());
         // 当前时间
         Date endDate = new Date();
