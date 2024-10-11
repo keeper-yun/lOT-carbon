@@ -8,7 +8,7 @@ localhost:8181/user/findAll
 localhost:8181/user/findById/(id号)
 
 CO2浓度检测层:
-localhost:8181/monitoring/findAll
-localhost:8181/monitoring/findLatest
-localhost:8181/monitoring/findByDate
+localhost:8181/monitoring/findAll    (所有工厂所有CO2检测数据)
+localhost:8181/monitoring/findLatest    (每10s检测一次，检测每个工厂的最新CO2检测记录)
+localhost:8181/monitoring/findByDate    (每个工厂设置检测时间范围，如一周，一个月)
 
