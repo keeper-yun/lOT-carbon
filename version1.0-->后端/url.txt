@@ -1,4 +1,5 @@
 hello world!
 git url:-->  https://github.com/keeper-yun/springboot-carbon
 
-为前端提供接口包括-->localhost:8181/
+为前端提供接口包括--> localhost:8181/user/findAll
+                     localhost:8181/user/findById/(id号)
