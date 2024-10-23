@@ -1,7 +1,8 @@
+
+
 #include <SoftwareSerial.h>
 
-//实例化软串口
-SoftwareSerial mySerial(3, 4); // RX, TX
+SoftwareSerial mySerialF(3, 4); // RX, TX
 
 byte buffer2[128];   //创建一个长度为12的字节数组
 double SPEED;
@@ -42,3 +43,4 @@ double readFLOW(){
    return SPEED;
 
 }
+
