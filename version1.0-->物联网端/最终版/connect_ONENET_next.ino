@@ -112,24 +112,7 @@ void loop() {
 
      while(mySerial.read()>=0){}
 
-      //读CO2浓度代码
-      mySerialC.begin(9600);
-     if(mySerialC.available()>=6)   // 如果串口接收到的字节数大于等于6个
-   { 
-      mySerialC.readBytes(buffer, 6);  // 读取6个字节到数组中
-      if(buffer[0] == 0x2C)
-      {
-         co2Value = buffer[1]*256+buffer[2];
-      }
-
-      Serial.print("CO2: ");  
-      Serial.print(co2Value); 
-      Serial.println(" ppm");
-      Serial.println(i);
-      i++;
-    //  t = analogRead(0)+4000;
-
-     t = co2Value; 
+     t = readCO2(); 
      if( (t / 1000) >= 1 ){
        dataCMD[strlen(dataCMD)-7] = t / 1000 + '0';
      }else{
@@ -145,8 +128,28 @@ void loop() {
     if(t >= 600)
       fans();
 
-  }
      
+}
+
+int readCO2(){
+
+  //读CO2浓度代码
+      mySerialC.begin(9600);
+     if(mySerialC.available()>=6)   // 如果串口接收到的字节数大于等于6个
+   { 
+      mySerialC.readBytes(buffer, 6);  // 读取6个字节到数组中
+      if(buffer[0] == 0x2C)
+      {
+         co2Value = buffer[1]*256+buffer[2];
+      }
+
+      Serial.print("CO2: ");  
+      Serial.print(co2Value); 
+      Serial.println(" ppm");
+      Serial.println(i);
+      i++;
+   }
+  return co2Value;
 }
 
 
