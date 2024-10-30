@@ -12,3 +12,6 @@ localhost:8181/monitoring/findAll    (所有工厂所有CO2检测数据)
 localhost:8181/monitoring/findLatest    (每10s检测一次，检测每个工厂的最新CO2检测记录)
 localhost:8181/monitoring/findByDate    (每个工厂设置检测时间范围，如一周，一个月)
 
+报警查询:
+localhost:8181/alarm/selectRecord
+ocalhost:8181/alarm/save
