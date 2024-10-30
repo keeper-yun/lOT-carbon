@@ -14,4 +14,7 @@ localhost:8181/monitoring/findByDate    (每个工厂设置检测时间范围，
 
 报警查询:
 localhost:8181/alarm/selectRecord
-ocalhost:8181/alarm/save
+localhost:8181/alarm/save
+
+查询所有工厂信息:
+localhost:8181/factory/findAll
