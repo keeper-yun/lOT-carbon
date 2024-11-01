@@ -6,6 +6,8 @@ git url:-->  https://github.com/keeper-yun/springboot-carbon
 用户层:
 localhost:8181/user/findAll
 localhost:8181/user/findById/(id号)
+//验证码
+http://localhost:8181/user/verifyCode
 
 CO2浓度检测层:
 localhost:8181/monitoring/findAll    (所有工厂所有CO2检测数据)
