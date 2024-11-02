@@ -214,6 +214,7 @@ int readCO2(){
 
   //读CO2浓度代码
       // mySerialC.begin(9600);
+      Serial2.begin(9600);
      if(Serial2.available()>=6)   // 如果串口接收到的字节数大于等于6个
    { 
       Serial2.readBytes(buffer, 6);  // 读取6个字节到数组中
