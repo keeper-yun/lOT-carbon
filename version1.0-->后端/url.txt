@@ -21,3 +21,8 @@ localhost:8181/alarm/save
 
 查询所有工厂信息:
 localhost:8181/factory/findAll
+
+
+限制表结构：
+localhost:8181/limit/values
+localhost:8181/limit/save
