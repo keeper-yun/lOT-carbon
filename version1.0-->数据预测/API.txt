@@ -8,3 +8,7 @@ http://127.0.0.1:5000/data_C
 http://127.0.0.1:5000/data_D
 
 生成预测数据图像
+http://127.0.0.1:5000/forecast_A
+http://127.0.0.1:5000/forecast_B
+http://127.0.0.1:5000/forecast_C
+http://127.0.0.1:5000/forecast_D
