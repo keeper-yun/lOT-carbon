@@ -15,6 +15,9 @@ localhost:8181/monitoring/findLatest    (每10s检测一次，检测每个工厂
 localhost:8181/monitoring/findByDate    (每个工厂设置检测时间范围，如一周，一个月)
 http://localhost:8181/monitoring/monitoringData?startDate=2024-01-01&endDate=2024-12-31
 
+CO2浓度每日总和:
+http://localhost:8181/monitoring/findDailySums
+
 报警查询:
 localhost:8181/alarm/selectRecord
 localhost:8181/alarm/save
