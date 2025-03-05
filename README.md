@@ -19,6 +19,18 @@
 **二.系统架构**
   <br><br/>
   * ![结构图2](https://github.com/user-attachments/assets/15999918-6d4a-486f-8614-f140fa2d9c6d)
+  <br><br/>
+  * 系统拥有两条完整链路，分别是：上行链路，下行链路。
+  <br><br/>
+  * （1）上行链路
+     <br><br/>
+    * ![1741141641714](https://github.com/user-attachments/assets/fa102ee8-4e6f-4d18-af71-41cfa8111857)
+
+     <br><br/>
+    * ![1741141641711](https://github.com/user-attachments/assets/5911a8fa-7824-490b-80c5-0c65f036e2d3)
+     
+    * 上行链路：从左侧传感器开始，分别有CO2传感器（二氧化碳），N2O传感器（一氧化二氮），CH4传感器（甲烷），流速传感器（空气流速）。
+      <br/>传感器采集到的数据为RS485信号,而Arduino MEGA 2560主板只能采集TTL信号，故采用RS485转TTL模块，将RS485信号转化成TTL信号让Arduino MEGA 2560主板接收。
 
 
 
