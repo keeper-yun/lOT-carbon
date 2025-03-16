@@ -58,6 +58,11 @@ train_y, test_y = y[:train_size], y[train_size:]
 train_timestamps = data.index[:train_size + time_step]
 test_timestamps = data.index[train_size + time_step:train_size + time_step + len(test_y)]
 
+# 只绘制训练集的后 50%
+train_plot_size = int(len(train_y) * 0.2)
+train_timestamps_plot = train_timestamps[-train_plot_size:]
+train_y_plot = train_y[-train_plot_size:].cpu().numpy() * max_output
+
 # 数据加载器
 train_loader = DataLoader(TensorDataset(train_x, train_y), batch_size=64, shuffle=True)
 
@@ -82,7 +87,7 @@ hidden_size = 32
 num_layers = 2
 output_size = 1
 learning_rate = 0.005
-epochs = 100
+epochs = 1000
 
 # 实例化模型
 model = LSTM(input_size, hidden_size, num_layers, output_size).to(device)
@@ -128,11 +133,13 @@ print(f"R²   = {r2:.4f}")
 
 # 绘制预测结果
 plt.figure(figsize=(12, 6))
-plt.plot(data.index, output, label='Original Data')
-plt.plot(test_timestamps, pred_y, label='Predicted Data', color='red')
+plt.plot(train_timestamps_plot, train_y_plot, label='Train', color='blue')
+plt.plot(test_timestamps, true_y, label='Test Data', color='orange')
+plt.plot(test_timestamps, pred_y, label='Predicted Data', color='red', linestyle='--')
+
 plt.xlabel('Date')
-plt.ylabel('CO2 Output')
-plt.title('LSTM')
+plt.ylabel('CO Output')
+plt.title('LSTM Forecasting')
 plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()

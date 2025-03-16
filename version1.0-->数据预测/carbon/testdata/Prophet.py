@@ -58,9 +58,10 @@ def generate_plot():
 
     # 绘图
     plt.figure(figsize=(12, 6))
-    plt.plot(train['ds'], train['y'], label='Train')
-    plt.plot(test['ds'], test['y'], label='Test', color='orange')
-    plt.plot(predicted_values['ds'], predicted_values['yhat'], label='Predict', linestyle='--', color='green')
+    train_plot = train.iloc[int(len(train) * 0.8):]
+    plt.plot(train_plot['ds'], train_plot['y'], label='Train')
+    plt.plot(test['ds'], test['y'], label='Test Data', color='orange')
+    plt.plot(predicted_values['ds'], predicted_values['yhat'], label='Predicted Data', linestyle='--', color='green')
 
     plt.legend()
     plt.xticks(rotation=45)
